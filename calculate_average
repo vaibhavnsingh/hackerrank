@@ -1,0 +1,19 @@
+def calculate_average(query_name, student_marks):
+    tot = 0
+    avg=0
+    for x in student_marks[query_name]:
+       tot+= x
+    if tot:
+        avg = tot/3
+            
+    return avg
+
+if __name__ == '__main__':
+    n = int(input())
+    student_marks = {}
+    for _ in range(n):
+        name, *line = input().split()
+        scores = list(map(float, line))
+        student_marks[name] = scores
+    query_name = input()
+    print("%.2f" %(calculate_average(query_name, student_marks)))
