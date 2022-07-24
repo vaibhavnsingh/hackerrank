@@ -1,0 +1,12 @@
+if __name__ == '__main__':
+    N = int(input())
+    my_list = []
+    for _ in range(N):
+        name, *values = input().split()
+        par = tuple(map(int, values))
+        if name != 'print':
+            command = getattr(my_list,name)
+            command(*par)
+        else:
+            print(my_list)
+    
